@@ -1,0 +1,46 @@
+{
+  "name": "lizardboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./bin/www",
+    "migration:create": "node_modules/.bin/migrate -d mongodb://localhost:27017/lizardboard create",
+    "migration:up": "node_modules/.bin/migrate -d mongodb://localhost:27017/lizardboard up",
+    "migration:down": "node_modules/.bin/migrate -d mongodb://localhost:27017/lizardboard down"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moniarchy/lizardboard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moniarchy/lizardboard/issues"
+  },
+  "homepage": "https://github.com/Moniarchy/lizardboard#readme",
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "^2.5.2",
+    "express": "~4.13.4",
+    "migrate-mongoose": "^2.0.2",
+    "mongoose": "^4.6.5",
+    "mocha": "^3.1.2",
+    "morgan": "~1.7.0",
+    "pug": "^2.0.0-beta6",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.6.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.13.2",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "nodemon": "^1.11.0",
+    "serve-favicon": "~2.3.0"
+  }
+}
