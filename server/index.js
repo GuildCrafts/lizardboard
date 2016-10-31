@@ -12,7 +12,7 @@ const appRoot = process.env.APP_ROOT
 const app = express();
 
 // view engine setup
-app.set('/front_end/views', path.join(__dirname, '/front_end/views'));
+app.set('views', path.join(__dirname, '../front_end/views'));
 app.set('view engine', 'pug');
 
 app.set('env', process.env.PORT || '3000')
