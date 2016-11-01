@@ -14,3 +14,31 @@ a {
   height: 700px;
   max-width: 1000px;
 }
+
+.content {
+  text-align: center;
+}
+
+.content.h3, .h4 {
+  display: flex;
+  flex-direction: row;
+}
+
+.content-tools {
+  display: flex;
+  flex-direction: row;
+}
+
+.feature {
+  margin: 15px;
+}
+
+.feature, img, a, p {
+  height: 200px;
+  width: 260px;
+}
+
+.footer-nav {
+  margin-top: 150px;
+  max-height: 30px;
+}
