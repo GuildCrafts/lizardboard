@@ -1,9 +1,11 @@
-const db = 'mongodb://localhost/lizardboard'
-const url = 'mongodb://127.0.0.1:27017/lizardboard';
+const DATABSE_URL = 'mongodb://127.0.0.1:27017/lizardboard';
 const MongoClient = require('mongodb').MongoClient, assert = require('assert');
 
-MongoClient.connect(url, (err, res, db) => {
-    res.render('error', {
-    message: err.message,
-    error: err
+MongoClient.connect(DATABASE_URL, (err, response) => {
+  .then( DATABASE_URL => {
+    response.send('Successfully connected to the database')
+  })
+  .catch( error => {
+    response.render('error', { error: error })
+  });
 });
