@@ -5,14 +5,40 @@ body {
   font-weight: 500;
 }
 
-a {
-  color: #00B7FF;
+.nav, h2 {
+  color: rgb(240, 241, 242);
+  padding-left: 5px;
 }
 
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  background-color: rgb(70, 77, 92);
+  max-width: 100%;
+}
+
+.nav-header-right {
+  margin-top: 10px;
+  padding: 15px;
+}
+
+.nav-header-right, a, button {
+  margin: 6px;
+}
+
+/*.spotlight-container {
+  height: 600px;
+}*/
+
 .spotlight-container-img {
+  z-index: 10;
   background-image: url('http://www.incimages.com/uploaded_files/image/1940x900/20160805_LGuild_209_H_pano_106090.jpg');
   height: 700px;
-  max-width: 1000px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .content {
@@ -27,6 +53,7 @@ a {
 .content-tools {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 .feature {
@@ -40,5 +67,12 @@ a {
 
 .footer-nav {
   margin-top: 150px;
-  max-height: 30px;
+  max-height: 50px;
+  color: rgb(240, 241, 242);
+  background-color: rgb(70, 77, 92);
+}
+
+.footer-nav, a {
+  color: rgb(240, 241, 242);
+  text-transform: uppercase;
 }
