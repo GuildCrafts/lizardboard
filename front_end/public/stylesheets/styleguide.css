@@ -1,0 +1,149 @@
+.heading, .header {
+  font-family: "Didact Gothic", sans-serif;
+  text-transform: uppercase;
+  color: #466446;
+}
+
+html {
+  text-align: center;
+  padding: 20px;
+}
+
+.color, .title, .body-text, .button, .link {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px #BABABA solid;
+  padding-top: 10px;
+  margin-top: -15px;
+  align-items: center;
+}
+
+.title--xlarge, .title--large, .title--medium, .title--small, .title--xsmall {
+  font-family: "Didact Gothic", sans-serif;
+  text-transform: uppercase;
+}
+
+.color {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 1px #BABABA solid;
+  padding-top: 10px;
+  margin-top: -15px;
+}
+.color__circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  text-align: center;
+}
+.gunmetal {
+  background-color: #3d4351;
+}
+
+.darkgreen {
+  background-color: #72a230;
+}
+
+.grey {
+  background-color: #272b34;
+}
+
+.green {
+  background-color: #8dc63f;
+}
+
+.lightgrey {
+  background-color: #6b6f78;
+}
+
+p.circle-text {
+  color: white;
+  font: 12px "Didact Gothic", sans-serif;
+  text-transform: uppercase;
+  padding: 2px;
+}
+
+.code-example {
+  background-color: #E8DEDE;
+  width: 100%;
+  border: 1px solid #BABABA;
+  color: #CB6F34;
+  font: 20px monospace;
+  padding: 5px 0px 5px 5px;
+  border-radius: 5px;
+}
+
+.code-example:hover {
+  background-color: #A08585;
+  color: white;
+}
+
+.body-text--normal {
+  color: #6B6F78;
+  font-family: "Prociono", serif;
+  letter-spacing: 1px;
+}
+
+.body-text--italic {
+  color: #6B6F78;
+  font-family: "Prociono", serif;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.button--success {
+  background-color: #8DC63F;
+  color: white;
+  width: 175px;
+  height: 32px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Didact Gothic", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-top: 12px;
+}
+
+.button--success:hover {
+  background-color: #72A230;
+}
+
+.button--normal {
+  background-color: #3D4351;
+  color: white;
+  width: 175px;
+  height: 32px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Didact Gothic", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding-top: 12px;
+}
+
+.button--normal:hover {
+  background-color: #272B34;
+}
+
+.link--normal {
+  color: #6B6F78;
+  text-decoration: none;
+  font-family: "Didact Gothic", sans-serif;
+  text-transform: uppercase;
+}
+
+.link--normal:hover {
+  color: white;
+}
+
+.link--disabled {
+  color: #898C93;
+  text-decoration: none;
+  font-family: "Didact Gothic", sans-serif;
+  text-transform: uppercase;
+}
