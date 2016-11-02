@@ -2,8 +2,33 @@ extends layout
 
 block content
 
-  h1=title
+	div.container
 
-  #root
-  script(src="/public/javascripts/index.js")
+		div.spotlight-container
+			div.spotlight-container-img
+				div.spotlight-message Live Dashboard Software for your business metrics
+				button.btn.btn-default(type='button') Start Your Free Trial
+				button.btn-demo(type='button') Book A Demo
+			div.spotlight-container-text
 
+		div.content
+			h3 Easy APIs to build dashboards for your next project
+			h4 Quickly see the information important to your team
+
+			div.content-tools
+				div.feature
+					img(url='http://www.incimages.com/uploaded_files/image/1940x900/20160805_LGuild_209_H_pano_106090.jpg')
+					a(href='/product') This is Feature 1
+					p Real Time Data Visualiztion
+
+				div.feature
+					img(url='http://www.incimages.com/uploaded_files/image/1940x900/20160805_LGuild_209_H_pano_106090.jpg')
+					a(href='/product') This is Feature 2
+					p Real Time Project Updates
+
+				div.feature
+					img(url='http://www.incimages.com/uploaded_files/image/1940x900/20160805_LGuild_209_H_pano_106090.jpg')
+					a(href='/product') This is Feature 3
+					p Real Time Sales Goals and Effective Time Management
+
+				script(src="/public/javascripts/index.js")

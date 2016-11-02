@@ -1,8 +1,134 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Questrial', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+h2.title {
+  letter-spacing: 5px;
+  border-radius: 20px;
+  height: 20px;
+  width: 20px;
+}
+
+h1.logo {
+  background-color: #4CAF50;
+  padding-left: 2px;
 }
 
 a {
-  color: #00B7FF;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nav, h2 {
+  color: rgb(240, 241, 242);
+  padding-left: 5px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-transform: uppercase;
+  background-color: rgb(70, 77, 92);
+  max-width: 100%;
+}
+
+.nav-header-right {
+  margin-top: 10px;
+  padding: 15px;
+}
+
+.nav-header-right, a, button {
+  margin: 6px;
+}
+
+.spotlight-container-img {
+  z-index: 10;
+  background-image: url('http://www.incimages.com/uploaded_files/image/1940x900/20160805_LGuild_209_H_pano_106090.jpg');
+  height: 700px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.spotlight-message {
+  color: white;
+  font-size: 18px;
+
+}
+
+.content {
+  text-align: center;
+}
+
+.content.h3, .h4 {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  z-index: -1;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  height: 40px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'Questrial', sans-serif;
+}
+
+.btn-demo{
+  z-index: -1;
+  background-color: #3d4351;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  height: 40px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'Questrial', sans-serif;
+}
+
+input {
+  padding: 11px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+.content-tools {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.feature {
+  margin: 15px;
+}
+
+.feature, img, a, p {
+  height: 200px;
+  width: 260px;
+}
+
+.footer-nav {
+  margin-top: 150px;
+  max-height: 50px;
+  color: rgb(240, 241, 242);
+  background-color: rgb(70, 77, 92);
+}
+
+.footer-nav, a {
+  color: rgb(240, 241, 242);
+  text-transform: uppercase;
 }
