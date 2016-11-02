@@ -2,8 +2,30 @@ extends layout
 
 block content
 
-  h1=title
+  div.container
 
-  #root
-  script(src="/public/javascripts/index.js")
+    div.spotlight-container
+     div.spotlight-container-img
+      div.spotlight-header LIVE MONITOR DASHBOARD SOFTWARE
+       div.spotlight-message Focus Your Team and Improve Your KPIs
+        div.buttons
+          button.btn.btn-default(type='button') Start Your Free Trial
+          button.btn-demo(type='button') Book A Demo
+      div.spotlight-container-text
 
+    div.content
+     h3 Easy APIs to build dashboards for your next project
+     h4 Quickly see the information important to your team
+
+    div.content-tools
+      div.feat-1
+        a(href='/product') This is Feature 1
+        p Real Time Data Visualiztion
+
+      div.feat-2
+        a(href='/product') This is Feature 2
+        p Real Time Project Updates
+
+      div.feat-3
+        a(href='/product') This is Feature 3
+        p Real Time Sales Goals
