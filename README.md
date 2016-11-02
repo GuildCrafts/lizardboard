@@ -31,4 +31,8 @@ A mongodb database named lizardboard must be created prior to starting the appli
 - [React](https://facebook.github.io/react/)
 
 ## Testing
+<<<<<<< HEAD
 TBD
+=======
+TBD
+>>>>>>> 4f083321a6f124aadc174d03990d380255b16920
