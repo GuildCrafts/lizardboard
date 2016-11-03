@@ -2384,6 +2384,10 @@ rimraf@~2.5.1, rimraf@~2.5.4, rimraf@2:
   dependencies:
     glob "^7.0.5"
 
+sass:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-0.5.0.tgz#9dee1183a0f400361f2c5d3453bf2e54705e03f9"
+
 semver-diff@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/semver-diff/-/semver-diff-2.1.0.tgz#4bbb8437c8d37e4b0cf1a68fd726ec6d645d6d36"

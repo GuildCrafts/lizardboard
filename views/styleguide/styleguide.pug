@@ -1,0 +1,13 @@
+html
+  head
+    title= title
+    link(href='https://fonts.googleapis.com/css?family=Didact+Gothic|Prociono' rel='stylesheet' type='text/css')
+    link(rel='stylesheet', href='/stylesheets/styleguide.css')
+  block content
+    h1.header=title
+
+    include color
+    include title
+    include body-text
+    include button
+    include link
