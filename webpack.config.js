@@ -1,5 +1,5 @@
 module.exports = {
-  entry: "./browser/index.js",
+  entry: "./front_end/index.js",
   output: {
     path: __dirname + "/build",
     filename: "bundle.js",
@@ -10,7 +10,6 @@ module.exports = {
           exclude: /(node_modules|bower_components)/,
           loader: "babel-loader",
           query: {
-            presets: ['es-2015']
           }
         }
       ]
