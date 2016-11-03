@@ -2,8 +2,9 @@ doctype html
 html
   head
     link(href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css')
-    link(rel='stylesheet', href='/stylesheets/style.css')
     link(href='https://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
     div.nav
      div.nav-header-left
        h1.logo= logo
@@ -18,6 +19,8 @@ html
   body
     block content
 
-div.footer-nav
-script(src="/javascripts/index.js")
-include footer
+    div.footer-nav
+
+    script(src="/javascripts/index.js")
+    script(src="/public/javascripts/index.js")
+    include footer
