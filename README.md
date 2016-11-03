@@ -14,6 +14,7 @@ A mongodb database named lizardboard must be created prior to starting the appli
 - Ensure `mongo` is running
 - yarn install
 
+
 ## Technical Stack
 
 ### Back End
@@ -24,8 +25,7 @@ A mongodb database named lizardboard must be created prior to starting the appli
 
 ### Database
 - [Mongodb](https://docs.mongodb.com/)
- -[Mongoose](http://mongoosejs.com/docs/guide.html)
- -[Migrate-Mongoose](https://github.com/balmasi/migrate-mongoose)
+  -[Mongoose](http://mongoosejs.com/docs/guide.html)
 
 ## Front End
 - [React](https://facebook.github.io/react/)
