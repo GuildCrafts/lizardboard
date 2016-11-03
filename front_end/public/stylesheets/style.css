@@ -21,6 +21,9 @@ a {
   font-weight: 600;
   text-align: left;
   cursor: pointer;
+  color: #4CAF50;
+  font-family: 'Questrial', sans-serif;
+  padding-top: 10px;
 }
 
 .nav, h2 {
@@ -48,9 +51,8 @@ a {
 
 .spotlight-container-img {
   z-index: 10;
-  background-image: url('http://www.incimages.com/uploaded_files/image/1940x900/20160805_LGuild_209_H_pano_106090.jpg');
-  height: 700px;
-  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.learnersguild.org/images/photo2.jpg');  height: 700px;
+  max-width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -58,16 +60,15 @@ a {
 .spotlight-message {
   color: white;
   font-size: 18px;
-
 }
 
-.content {
-  text-align: center;
-}
-
-.content.h3, .h4 {
-  display: flex;
-  flex-direction: row;
+.spotlight-header {
+  color: #4CAF50;
+  font-size: 40px;
+  padding-top: 100px;
+  padding-left: 40px;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
 button {
@@ -100,6 +101,38 @@ button {
   font-family: 'Questrial', sans-serif;
 }
 
+.content {
+  text-align: center;
+  color: black;
+}
+
+.content.h3, .h4 {
+  display: flex;
+  flex-direction: row;
+}
+
+div.feat-1 {
+  background-image: url('http://cdn.mos.cms.futurecdn.net/690ec4b34b365c42bd806a632bffbc5c.jpg');
+  height: 200px;
+  width: 260px;
+  background-position: contain;
+}
+
+div.feat-2 {
+  background-image: url('http://designplaygrounds.com/wp-content/uploads/2010/01/data-visualization-processing.jpg');
+  height: 200px;
+  width: 260px;
+  background-position: contain;
+}
+
+div.feat-3 {
+  background-image: url('http://www.bethkanter.org/wp-content/uploads/unnamed4.jpg');
+  height: 200px;
+  width: 260px;
+  background-position: contain;
+}
+
+
 input {
   padding: 11px;
   font-size: 14px;
@@ -110,10 +143,7 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-}
-
-.feature {
-  margin: 15px;
+  text-align: center;
 }
 
 .feature, img, a, p {
@@ -122,13 +152,14 @@ input {
 }
 
 .footer-nav {
-  margin-top: 150px;
+  margin-top: 50px;
   max-height: 50px;
   color: rgb(240, 241, 242);
   background-color: rgb(70, 77, 92);
 }
 
-.footer-nav, a {
+.footer-nav {
   color: rgb(240, 241, 242);
   text-transform: uppercase;
+  display: flex;
 }
