@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 
 const routes = require('../routes/index');
 const users = require('../routes/users');
+const dashboard = require('../routes/dashboard');
 
 const appRoot = process.env.APP_ROOT
 const app = express();
@@ -37,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/dashboard', dashboard);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -68,6 +70,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 
 module.exports = app;
