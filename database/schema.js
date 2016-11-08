@@ -18,5 +18,6 @@ const userSchema = mongoose.Schema ({
 const userWidgets = mongoose.model('userWidgets', userSchema)
 
 module.exports = {
+  db,
   userWidgets
 }
