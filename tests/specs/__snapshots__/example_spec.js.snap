@@ -27,3 +27,13 @@ exports[`test Link changes the class when hovered 3`] = `
   Facebook
 </a>
 `;
+
+exports[`test No link given 1`] = `
+<a
+  className="normal"
+  href="#"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}>
+  Facebook
+</a>
+`;

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:watch": "npm test -- --watch",
     "start": "nodemon ./bin/www"
   },
   "repository": {
@@ -18,7 +19,7 @@
   },
   "homepage": "https://github.com/Moniarchy/lizardboard#readme",
   "jest": {
-    "testRegex": "(/tests/.*|\\.(test|spec))\\.(js|jsx)$",
+    "testRegex": "(/tests/specs/.*|\\.(test|spec))\\.(js|jsx)$",
     "collectCoverage": "true",
     "coverageDirectory": "tests/coverage/",
     "coverageThreshold": {
@@ -32,6 +33,7 @@
   },
   "dependencies": {
     "body-parser": "~1.15.1",
+    "chai": "^3.5.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "ejs": "^2.5.2",
@@ -51,9 +53,9 @@
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-react": "^6.11.1",
     "jest": "^16.0.2",
-    "mocha": "^3.1.2",
     "nodemon": "^1.11.0",
     "react-test-renderer": "^15.3.2",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "supertest": "^2.0.1"
   }
 }

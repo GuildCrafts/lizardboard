@@ -1,11 +1,12 @@
 import React from 'react';
-import Link from '../frontend/components/example';
+import Link from '../../frontend/components/example';
 import renderer from 'react-test-renderer';
 
-test('Link changes the class when hovered', () => {
+it('Link changes the class when hovered', () => {
   const component = renderer.create(
     <Link page="http://www.facebook.com">Facebook</Link>
   );
+
   let tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 
@@ -20,4 +21,14 @@ test('Link changes the class when hovered', () => {
   // re-rendering
   tree = component.toJSON();
   expect(tree).toMatchSnapshot();
+});
+
+test('No link given', () => {
+  const component = renderer.create(
+    <Link page="">Facebook</Link>
+  );
+
+  let tree = component.toJSON();
+  expect(tree).toMatchSnapshot();
+
 });
