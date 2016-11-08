@@ -1,8 +1,8 @@
 extends layout
 
 block content
-  h1 Create a Dashboard 
-  form(action='create-dashboard', method='post')
-  | Dashboard Name:
-  input(type='text', placeholder='Company Dashboard')
-  input(type='submit', value='Submit')
+  h1 Create a Dashboard
+  form(action='/dashboard',method='post')
+    | Dashboard Name:
+    input(name='name' type='text' value='Company Dashboard' placeholder='dashboard title')
+    input(type='submit', value='Submit')

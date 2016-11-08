@@ -9,6 +9,9 @@ const routes = require('../routes/index');
 const users = require('../routes/users');
 const dashboard = require('../routes/dashboard');
 
+// const widgets = require( './routes/widgets' )
+const api = require( '../routes/api/manifest').v1
+
 const appRoot = process.env.APP_ROOT
 const app = express();
 
@@ -39,6 +42,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/users', users);
 app.use('/dashboard', dashboard);
+
+app.use( '/api/v1/dashboard', api.dashboard )
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
