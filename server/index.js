@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 
 const routes = require('../routes/index');
 const users = require('../routes/users');
-const dashboards = require('../routes/dashboards');
 
 // const widgets = require( './routes/widgets' )
 const api = require( '../routes/api/manifest').v1
@@ -41,7 +40,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/dashboards', dashboards);
 
 app.use( '/api/v1/dashboards', api.dashboards )
 
