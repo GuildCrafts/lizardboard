@@ -1,5 +1,5 @@
 
-const Dashboard = require('../models/dashboard.js')
+const Dashboard = require('../models/dashboards.js')
 
 const express = require('express')
 const router = express.Router()
@@ -19,14 +19,15 @@ router.get('/:id', (request, response, next) => {
 })
 
 router.put('/:id', (request, response, next) => {
-  Dashboard.findByIdAndUpdate(request.params.id, request.body, (error, post) => {
+  const userId  = request.params.id
+
+  Dashboard.findByIdAndUpdate(userId, request.body, (error, post) => {
     if (error) return next(error)
     response.json(post)
   })
 })
 
 router.delete('/:id',(request, response, next) => {
-  console.log(request.params.id);
   Dashboard.findByIdAndRemove(request.params.id, request.body, (error, post) => {
     if (error) return next(error)
     response.json(post)

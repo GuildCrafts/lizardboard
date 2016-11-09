@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1 Create a Dashboard
-  form(action='/dashboard',method='post')
+  form(action='/dashboards',method='post')
     | Dashboard Name:
     input(name='name' type='text' value='Company Dashboard' placeholder='dashboard title')
     input(type='submit', value='Submit')

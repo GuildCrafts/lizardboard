@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 const routes = require('../routes/index');
 const users = require('../routes/users');
-const dashboard = require('../routes/dashboard');
+const dashboards = require('../routes/dashboards');
 
 // const widgets = require( './routes/widgets' )
 const api = require( '../routes/api/manifest').v1
@@ -41,9 +41,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/dashboard', dashboard);
+app.use('/dashboards', dashboards);
 
-app.use( '/api/v1/dashboard', api.dashboard )
+// app.use( '/api/v1/dashboards', api.dashboards )
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

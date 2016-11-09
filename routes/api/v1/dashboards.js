@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 const mongoose = require('mongoose');
-const Dashboard = require('../../../models/dashboard.js');
+const Dashboard = require('../../../models/dashboards.js');
 
 // Use native Node promises
 mongoose.Promise = global.Promise;
