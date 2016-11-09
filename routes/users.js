@@ -1,5 +1,5 @@
 const express = require('express');
-const { userWidgets, db } = require('../database/schema.js')
+const { User, db } = require('../database/User.js')
 const router = express.Router();
 const mongoose = require('mongoose')
 
@@ -9,11 +9,26 @@ router.get('/', ( request, response, next ) => {
   response.send( 'respond with a resource' );
 });
 
+router.post('/', ( request, response, next ) => {
+  const { username } = request.body
+  const newUser = new User({
+    username: username,
+    dashboards: {
+       widgets: {}
+    }
+  })
+
+  newUser.save( (error) => {
+    if(error) return handleError(err)
+  })
+
+})
+
 /* GET widget */
 router.get('/widgets/:widgetId', ( request, response, next ) => {
   const { widgetId } = request.params
 
-  userWidgets.find( {'widgets._id': widgetId},function(error, widgets){
+  User.find( {'widgets._id': widgetId},function(error, widgets){
       return widgets
   })
   .then( data => console.log('finished') )
@@ -31,7 +46,7 @@ router.post('/:userId/widgets/create', (request, response, next ) => {
     contents: contents
   }
 
-  userWidgets.findOneAndUpdate(
+  User.findOneAndUpdate(
     { _id: userId },
     {
       $push: {
@@ -58,7 +73,7 @@ router.post('/:userId/widgets/:widgetId/update', ( request, response, next ) => 
     contents: contents
   }
 
-  userWidgets.findOneAndUpdate(
+  User.findOneAndUpdate(
     { _id: userId, widgets: { $elemMatch:{ _id: widgetId }}},
     {
       $set: {
@@ -77,7 +92,7 @@ router.post('/:userId/widgets/:widgetId/update', ( request, response, next ) => 
 router.post( '/:userId/widgets/:widgetId/delete', ( request, response, next ) => {
   const { userId, widgetId } = request.params
 
-  userWidgets.findOneAndUpdate(
+  User.findOneAndUpdate(
     { _id: userId },
     {
       $pull: {
