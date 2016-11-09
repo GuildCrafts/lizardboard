@@ -13,6 +13,16 @@ A mongodb database named lizardboard must be created prior to starting the appli
 - brew install mongodb
 - Ensure `mongo` is running
 - yarn install
+- yarn start (start the server)
+
+Lizardboard needs an .env file to specify environment variables that are required to run the application.
+```
+echo MONGODB_URI=mongodb://localhost/lizardboard >> .env
+```
+
+## (Optional) Configuration for testing
+- recommended - utilize Postman and Robomongo to test api routing
+
 
 ## Technical Stack
 

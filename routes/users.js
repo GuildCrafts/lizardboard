@@ -1,9 +1,12 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
+const mongoose = require('mongoose')
+const User = require('../models/user.js')
 
-/* GET users listing. */
-router.get('/', (request, response, next) => {
-  response.send('respond with a resource');
-});
+router.post( '/', (request, response, next ) => {
+  User.create( request.body )
+  .then( user => response.json( user ) )
+  .catch( error => next( error) )
+})
 
-module.exports = router;
+module.exports = router
