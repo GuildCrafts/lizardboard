@@ -6,8 +6,7 @@ const router = express.Router()
 
 router.post('/', (request, response, next) => {
   Dashboard.create(request.body, (error, post) => {
-    if (error)
-      return next(error)
+    if (error) return next(error)
     response.json(post)
   })
 })
