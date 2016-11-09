@@ -1,11 +1,5 @@
-const mongoose = require('mongoose')
+
 const Dashboard = require('../models/dashboard.js')
-
-mongoose.Promise = global.Promise
-
-mongoose.connect('mongodb://localhost/lizardboard')
-  .then(() => console.log('connection succesful'))
-  .catch((error) => console.error(err))
 
 const express = require('express')
 const router = express.Router()
