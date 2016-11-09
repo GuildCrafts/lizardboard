@@ -1,42 +1,43 @@
+const Dashboard = require('../../../models/dashboards.js');
+
 const express = require('express')
 const router = express.Router()
 
-const mongoose = require('mongoose');
-const Dashboard = require('../../../models/dashboards.js');
+router.get('/', (request, response, next) => {
+  Dashboard.find((error, post) => {
+    if (error) return next(error)
+    response.json(post)
+  })
+})
 
-// Use native Node promises
-mongoose.Promise = global.Promise;
-// connect to MongoDB
-// mongoose.connect('mongodb://localhost/lizardboard')
-//   .then(() => console.log('connection succesful'))
-//   .catch((err) => console.error(err));
+router.post('/', (request, response, next) => {
+  Dashboard.create(request.body, (error, post) => {
+    if (error) return next(error)
+    response.json(post)
+  })
+})
 
-router.post('/', function(request, response, next) {
-  Dashboard.create(request.body, function(err, post) {
-    if (err)
-      return next(err);
+router.get('/:id', (request, response, next) => {
+  Dashboard.findById(request.params.id, (error, post) => {
+    if (error) return next(error);
     response.json(post);
-  });
-});
+  })
+})
 
-// const buildFilteredItemTree = require( '../../items/build_filtered_item_tree' )
-//
-// router.get( '/', ( request, response ) => {
-//   const { Item } = request.app.get( 'models' )
-//   const { query, decoded } = request
-//
-//   buildFilteredItemTree( Item, decoded.user, query )
-//     .then( data => response.json( { data } ) )
-// })
-//
-// router.post( '/', ( request, response ) => {
-//   const { Item } = request.app.get( 'models' )
-//
-//   const { title, description, parent_id } = request.body
-//   const { user } = request.decoded
-//
-//   Item.create({ title, description, parent_id, user_id: user.id })
-//     .then( result => response.status( 200 ).json( {} ) )
-// })
+router.put('/:id', (request, response, next) => {
+  const userId  = request.params.id
+
+  Dashboard.findByIdAndUpdate(userId, request.body, (error, post) => {
+    if (error) return next(error)
+    response.json(post)
+  })
+})
+
+router.delete('/:id',(request, response, next) => {
+  Dashboard.findByIdAndRemove(request.params.id, request.body, (error, post) => {
+    if (error) return next(error)
+    response.json(post)
+  })
+})
 
 module.exports = router

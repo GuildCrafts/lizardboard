@@ -1,6 +1,6 @@
-const dashboard = require('./v1/dashboards')
+const dashboards = require('./v1/dashboards')
 // const widgets = require('./v1/widgets')
 
 module.exports = {
-  v1: { dashboard }
+  v1: { dashboards }
 }

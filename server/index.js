@@ -43,7 +43,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/dashboards', dashboards);
 
-// app.use( '/api/v1/dashboards', api.dashboards )
+app.use( '/api/v1/dashboards', api.dashboards )
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

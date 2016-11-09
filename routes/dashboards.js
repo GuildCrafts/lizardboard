@@ -1,4 +1,3 @@
-
 const Dashboard = require('../models/dashboards.js')
 
 const express = require('express')
