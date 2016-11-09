@@ -4,6 +4,13 @@ const Dashboard = require('../models/dashboards.js')
 const express = require('express')
 const router = express.Router()
 
+router.get('/', (request, response, next) => {
+  Dashboard.find((error, post) => {
+    if (error) return next(error)
+    response.json(post)
+  })
+})
+
 router.post('/', (request, response, next) => {
   Dashboard.create(request.body, (error, post) => {
     if (error) return next(error)
