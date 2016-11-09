@@ -16,8 +16,7 @@ A mongodb database named lizardboard must be created prior to starting the appli
 - yarn start (start the server)
 
 Lizardboard needs an .env file to specify environment variables that are required to run the application.
-```
-echo MONGODB_URI=mongodb://localhost/lizardboard >> .env
+``` echo MONGODB_URI=mongodb://localhost/lizardboard >> .env
 ```
 
 ## (Optional) Configuration for testing
