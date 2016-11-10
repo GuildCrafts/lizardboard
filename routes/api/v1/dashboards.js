@@ -1,5 +1,5 @@
-const { Dashboard, Widget } = require('../../../models/dashboards.js')
-// const Widget = require('../../../models/widgets.js')
+const Dashboard = require('../../../models/dashboards.js')
+const { Widget } = require('../../../models/widgets.js')
 const User = require('../../../models/users.js')
 
 const express = require('express')
@@ -24,7 +24,9 @@ router.post('/:id/widgets', (request, response, next) => {
     if (error) return next(error)
     let newWidget = new Widget(request.body)
     dashboard.widgets.push(newWidget)
-    dashboard.save()
+    dashboard.save((error) => {
+      if (error) return next(error)
+    })
     response.json(dashboard)
   })
   // .then( dashboard.widgets.create(request.body, (error, dashboard) => {

@@ -1,17 +1,7 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 const User = require('./users.js')
-// const Widget = require('./widgets.js')
-
-
-const WidgetSchema = new Schema ({
-  type: String,
-  title: String,
-  size: String,
-  contents: String
-})
-
-const Widget = mongoose.model( 'Widget', WidgetSchema )
+const { WidgetSchema } = require('./widgets.js')
 
 const DashboardSchema = new Schema ({
   name: { type: String, required: true, default: 'Company Dashboard' },
@@ -27,6 +17,4 @@ const DashboardSchema = new Schema ({
 
 const Dashboard = mongoose.model('Dashboard', DashboardSchema)
 
-module.exports = { Dashboard, Widget }
-
-// widgets: [Widget],
+module.exports = Dashboard
