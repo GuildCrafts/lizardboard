@@ -8,6 +8,9 @@ var app = require('../server/index');
 var debug = require('debug')('src:server');
 var http = require('http');
 
+const mongoose = require('mongoose')
+mongoose.Promise = global.Promise
+const connection = process.env.MONGODB_URI
 /**
  * Get port from environment and store in Express.
  */
@@ -15,6 +18,8 @@ var http = require('http');
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
+mongoose.connect( connection )
+  .then( () => server.listen( port ) )
 /**
  * Create HTTP server.
  */
