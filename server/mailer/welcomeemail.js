@@ -1,17 +1,14 @@
-import nodemailer from 'nodemailer'
-import sgTransport from 'nodemailer-sendgrid-transport'
+const nodemailer = require('nodemailer')
+const smtpTransport = require('nodemailer-smtp-transport')
 
-const sgOptions = {
-  auth: {
-    api_user: 'SENDGRID_USERNAME',
-    api_key: 'SENDGRID_PASSWORD'
-  }
-}
 
-const mailer = nodemailer.createTransport(sgTransport(sgOptions))
+
+const mailer = nodemailer.createTransport(smtpTransport('smtps://lizardboardmailer@gmail.com:lizardmail!@smtp.gmail.com'))
 
 const sendWelcomeEmail = user => {
-  return mailer.sendMail( welcomeEmail(user.email, user.name) )
+  console.log(user)
+  console.log('sending email')
+  return mailer.sendMail( welcomeEmail(user.email, user.username) )
 }
 
 const welcomeEmail = ( userEmail, userName ) => {
