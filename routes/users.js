@@ -6,7 +6,7 @@ const User = require('../models/user.js')
 router.post( '/', (request, response, next ) => {
   User.create( request.body )
   .then( user => response.json( user ) )
-  .catch( error => next( error) )
+  .catch( error => next( error ) )
 })
 
 module.exports = router
