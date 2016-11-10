@@ -5,12 +5,13 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
+const env = process.env.NODE_ENV || 'development';
+const config = require(__dirname + '/../config/config.js')[env];
 const routes = require('../routes/index');
 const users = require('../routes/users');
 
 const appRoot = process.env.APP_ROOT
 const app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'pug');
