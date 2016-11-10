@@ -17,6 +17,9 @@ A mongodb database named lizardboard must be created prior to starting the appli
 
 Lizardboard needs an .env file to specify environment variables that are required to run the application.
 ``` echo MONGODB_URI=mongodb://localhost/lizardboard >> .env
+    echo PORT=3000 >> .env
+    echo MAILER_EMAIL=lizardboardmailer@gmail.com >> .env
+    echo MAILER_PASSWORD=lizardmail! >> .env
 ```
 
 ## (Optional) Configuration for testing
