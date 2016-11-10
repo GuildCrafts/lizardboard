@@ -7,7 +7,7 @@ const { sendWelcomeEmail } = require('../server/mailer/welcomeemail.js')
 router.post( '/', (request, response, next ) => {
   User.create( request.body )
   .then( user =>  {
-    sendWelcomeEmail(user)
+    sendWelcomeEmail( user )
     response.json( user )
   })
   .catch( error => next( error) )
