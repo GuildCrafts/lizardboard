@@ -88,3 +88,11 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+const mongoose = require('mongoose')
+mongoose.Promise = global.Promise
+const connection ='mongodb://localhost/lizardboard'
+
+mongoose.connect(connection)
+  .then(() => console.log('connection succesful'))
+  .catch((error) => console.error(error))
