@@ -6,21 +6,21 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
 
     div.nav
-     div.nav-header-left
-       h1.logo= logo
-       h2.title= title
+      div.nav-header-left
+        h1.logo= logo
+        h2.title= title
 
-     div.nav-header-right
-       a(href= '/product') Product
-       a(href= '/users/login') Login
-       input(type="text", placeholder="Email address")
-       button(type="submit" ) Free Trial
+      div.nav-header-right
+        a(href= '/product') Product
+        a(href= '/users/login') Login
+        input(type="text", placeholder="Email address")
+        button(type="submit" ) Free Trial
 
   body
     block content
 
     div.footer-nav
 
-    include footer
-    script(src="/javascripts/index.js")
-    script(src="/public/javascripts/index.js")
+    //- include footer
+    //- script(src="/javascripts/index.js")
+    //- script(src="/public/javascripts/index.js")
