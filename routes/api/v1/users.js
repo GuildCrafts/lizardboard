@@ -15,6 +15,18 @@ const requireLogin = passport.authenticate( 'local', {
   failureFlash: true
 })
 
+const passport = require( '../../../config/passport' )
+
+const { register } = require( '../../../src/authentication/register' )
+const { login } = require( '../../../src/authentication/login' )
+
+const requireAuth = passport.authenticate( 'jwt', { session: false } )
+const requireLogin = passport.authenticate( 'local', {
+  session: false,
+  failureRedirect: '/',
+  failureFlash: true
+})
+
 router.get( '/', ( request, response ) => {
   User.find().exec()
     .then( user => response.json( user ))

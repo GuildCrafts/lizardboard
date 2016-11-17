@@ -9,14 +9,14 @@ exports.register = ( request, response, next ) => {
   const { email, password } = request.body
 
   if (!email) {
-    return response.status( 422 ).send({ error: ERROR_MESSAGE })
+    return response.status(422).send({ error: ERROR_MESSAGE })
   }
 
   User.findOne({ email: email }, (err, existingUser) => {
       if (err) { return next(err) }
 
       if (existingUser) {
-        return response.status( 422 ).send({ error: ERROR_MESSAGE })
+        return response.status(422).send({ error: ERROR_MESSAGE })
       }
 
       const user = new User({ email, password })
@@ -26,7 +26,7 @@ exports.register = ( request, response, next ) => {
           return next( err )
         }
 
-        return response.status( 201 ).json( tokenInfo( user ) )
+        return response.status(201).json( tokenInfo( user ))
       })
   })
 }
