@@ -7,6 +7,8 @@ const ERROR_MESSAGE = 'Cannot authenticate request'
 
 exports.register = ( request, response, next ) => {
   const { email, password } = request.body
+  console.log('email', email )
+  console.log('body', request.body )
 
   if (!email) {
     return response.status(422).send({ error: ERROR_MESSAGE })

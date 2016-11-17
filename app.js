@@ -9,14 +9,10 @@ const api = require( './routes/api/manifest' ).v1
 
 const cors = require( './src/cors' )
 
-const cors = require( './src/cors' )
-
 const app = express()
 
 app.set( 'env', process.env.PORT || '3000' )
 if( process.env.NODE_ENV !== 'test' ) app.use( logger( 'dev' ))
-
-app.use(bodyParser.json())
 
 app.use( logger( 'dev' ))
 app.use( bodyParser.json())
@@ -55,12 +51,13 @@ if ( app.get( 'env' ) === 'development' ) {
 
 // production error handler
 // no stacktraces leaked to user
-app.use( function( err, req, res, next ) {
-  res.status( err.status || 500 )
-  res.send({
-    message: err.message,
-    error: {}
+  app.use( (err, req, res, next) => {
+    res.status( err.status || 500 )
+    res.render( 'error', {
+      message: err.message,
+      error: {}
+    })
   })
-})
+}
 
 module.exports = app
