@@ -9,6 +9,8 @@ const api = require( './routes/api/manifest' ).v1
 
 const cors = require( './src/cors' )
 
+const cors = require( './src/cors' )
+
 const app = express()
 
 app.set( 'env', process.env.PORT || '3000' )

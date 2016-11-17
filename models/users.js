@@ -42,4 +42,8 @@ UserSchema.methods.comparePassword = function( candidatePassword, cb ) {
   })
 }
 
+<<<<<<< e5054e8fbb58475306a7e5cf0b58e67e02ae6899
 module.exports = mongoose.model('User', UserSchema);
+=======
+module.exports = mongoose.model('User', UserSchema)
+>>>>>>> addressed jrob requests

@@ -26,7 +26,7 @@ exports.register = ( request, response, next ) => {
           return next( err )
         }
 
-        return response.status(201).json( tokenInfo( user ))
+        return response.status( 201 ).json( tokenInfo( user ) )
       })
   })
 }
