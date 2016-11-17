@@ -7,6 +7,8 @@ const bodyParser = require( 'body-parser' )
 
 const api = require( './routes/api/manifest' ).v1
 
+const cors = require( './src/cors' )
+
 const app = express()
 
 app.set( 'env', process.env.PORT || '3000' )
@@ -25,6 +27,8 @@ app.use( express.static( path.join( __dirname, 'public' )))
 
 app.use( '/api/v1/dashboards', api.dashboards )
 app.use( '/api/v1/users', api.users )
+
+app.use ( cors )
 
 // catch 404 and forward to error handler
 app.use( function( req, res, next ) {
