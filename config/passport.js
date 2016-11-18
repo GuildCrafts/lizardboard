@@ -12,7 +12,6 @@ const ERROR_MESSAGE = {
   error: 'Your login details could not be verified. Please try again.'
 }
 
-const localLogin = new LocalStrategy( LOCAL_OPTIONS, strategy )
 
 const strategy = ( email, password, done ) => {
   User.findOne({ email }, ( error, user ) => {
@@ -38,6 +37,7 @@ const strategy = ( email, password, done ) => {
   })
 }
 
+const localLogin = new LocalStrategy( LOCAL_OPTIONS, strategy )
 
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromAuthHeader(),
@@ -45,7 +45,7 @@ const jwtOptions = {
 }
 
 const jwtLogin = new Strategy( jwtOptions, ( payload, done ) => {
-  User.findById(payload._id, function( err, user ) {
+  User.findById( payload._id, function( err, user ) {
     if( err ) {
       return done( err, false )
     }

@@ -29,7 +29,7 @@ router.post( '/', (request, response ) => {
 
 router.get( '/logout', ( request, response ) => {
   request.logout()
-  response.send('User has logged out')
+  response.send( 200 )
 })
 
 router.get( '/:id', ( request, response ) => {
