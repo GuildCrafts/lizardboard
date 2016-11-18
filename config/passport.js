@@ -1,11 +1,10 @@
 const passport = require( 'passport' )
-const User = require( '../models/users' )
-
+const LocalStrategy = require( 'passport-local' )
 const { Strategy, ExtractJwt } = require( 'passport-jwt' )
 
-const LocalStrategy = require( 'passport-local' )
+const User = require( '../models/users' )
 
-const localOptions = {
+const LOCAL_OPTIONS = {
   usernameField: 'email'
 }
 
@@ -13,22 +12,24 @@ const ERROR_MESSAGE = {
   error: 'Your login details could not be verified. Please try again.'
 }
 
+const localLogin = new LocalStrategy( LOCAL_OPTIONS, strategy )
+
 const strategy = ( email, password, done ) => {
   User.findOne({ email }, ( error, user ) => {
-    if(error) {
+    if( error ) {
       return done( error )
     }
 
-    if(!user) {
+    if( !user ) {
       return done( null, false, ERROR_MESSAGE )
     }
 
     user.comparePassword( password, function( error, isMatch ) {
-      if(error) {
+      if( error ) {
         return done( error )
       }
 
-      if(!isMatch) {
+      if( !isMatch ) {
         return done( null, false, ERROR_MESSAGE )
       }
 
@@ -37,7 +38,6 @@ const strategy = ( email, password, done ) => {
   })
 }
 
-const localLogin = new LocalStrategy( localOptions, strategy )
 
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromAuthHeader(),
@@ -46,12 +46,14 @@ const jwtOptions = {
 
 const jwtLogin = new Strategy( jwtOptions, ( payload, done ) => {
   User.findById(payload._id, function( err, user ) {
-    if (err) { return done(err, false) }
+    if( err ) {
+      return done( err, false )
+    }
 
-    if (user) {
-      done(null, user)
+    if( user ) {
+      done( null, user )
     } else {
-      done(null, false)
+      done( null, false )
     }
   })
 })

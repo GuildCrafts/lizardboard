@@ -3,7 +3,7 @@ const crypto = require( 'crypto' )
 const User = require( '../../models/users' )
 
 const generateToken = user => {
-  return jwt.sign( user, 'super secret passphrase', {
+  return jwt.sign( user, process.env.SECRET , {
     expiresIn: 10080
   })
 }
