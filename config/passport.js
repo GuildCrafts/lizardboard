@@ -15,20 +15,20 @@ const ERROR_MESSAGE = {
 
 const strategy = ( email, password, done ) => {
   User.findOne({ email }, ( error, user ) => {
-    if( error ) {
+    if(error) {
       return done( error )
     }
 
-    if( ! user ) {
+    if(!user) {
       return done( null, false, ERROR_MESSAGE )
     }
 
     user.comparePassword( password, function( error, isMatch ) {
-      if ( error ) {
+      if(error) {
         return done( error )
       }
 
-      if ( !isMatch ) {
+      if(!isMatch) {
         return done( null, false, ERROR_MESSAGE )
       }
 
@@ -41,10 +41,10 @@ const localLogin = new LocalStrategy( localOptions, strategy )
 
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromAuthHeader(),
-  secretOrKey: 'super secret'
+  secretOrKey: process.env.SECRET
 }
 
-const jwtLogin = new Strategy( jwtOptions, function( payload, done ) {
+const jwtLogin = new Strategy( jwtOptions, ( payload, done ) => {
   User.findById(payload._id, function( err, user ) {
     if (err) { return done(err, false) }
 
@@ -56,7 +56,7 @@ const jwtLogin = new Strategy( jwtOptions, function( payload, done ) {
   })
 })
 
-passport.use(jwtLogin)
-passport.use(localLogin)
+passport.use( jwtLogin )
+passport.use( localLogin )
 
 module.exports = passport
