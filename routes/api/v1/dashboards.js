@@ -43,4 +43,16 @@ router.post( '/:id/widgets', ( request, response ) => {
     .catch( errorResponse( response ))
 })
 
+router.put( '/:id/widgets/:widgetId', ( request, response ) => {
+  Widget.findByIdAndUpdate( request.params.widgetId, request.body ).exec()
+    .then( widget => response.json( widget ))
+    .catch( errorResponse( response ))
+})
+
+router.delete( '/:id/widgets/:widgetId', ( request, response ) => {
+  Widget.findByIdAndRemove( request.params.widgetId ).exec()
+    .then( widget => response.json( widget ))
+    .catch( errorResponse( response ))
+})
+
 module.exports = router
