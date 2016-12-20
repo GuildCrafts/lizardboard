@@ -51,4 +51,4 @@ const image = {
   }]
 }
 
-export default image
+module.exports = image

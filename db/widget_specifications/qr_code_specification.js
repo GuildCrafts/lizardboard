@@ -32,4 +32,4 @@ const qrCode = {
   }]
 }
 
-export default qrCode
+module.exports = qrCode

@@ -3092,4 +3092,4 @@ const clock = {
   }]
 }
 
-export default clock
+module.exports = clock
