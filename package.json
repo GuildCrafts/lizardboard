@@ -7,7 +7,8 @@
     "node": "7.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:watch": "mocha -w --recursive",
+    "test": "mocha --recursive",
     "seed": "node db/seed_collections.js",
     "start": "nf start",
     "start:dev": "nf start --procfile Procfile.dev"
@@ -25,6 +26,7 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.15.1",
+    "chai": "^3.5.0",
     "cookie-parser": "~1.4.3",
     "crypto": "0.0.3",
     "debug": "~2.2.0",
@@ -32,6 +34,7 @@
     "es6-promise": "^4.0.5",
     "express": "~4.13.4",
     "foreman": "^2.0.0",
+    "mocha": "^3.2.0",
     "mongodb": "^2.2.12",
     "mongoose": "^4.6.6",
     "morgan": "~1.7.0",
@@ -42,7 +45,8 @@
     "pug": "^2.0.0-beta6",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-router": "^2.6.1"
+    "react-router": "^2.6.1",
+    "sinon": "^1.17.6"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",

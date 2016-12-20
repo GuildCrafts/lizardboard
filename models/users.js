@@ -3,10 +3,21 @@ const Schema = mongoose.Schema
 const bcrypt = require( 'bcrypt-nodejs' )
 
 const UserSchema = new Schema({
-   email: { type: String, required: true, unique: true },
-   password: { type: String, required: true },
-   token: { type: String },
-   token_expires: { type: Date },
+   email: {
+     type: String,
+     required: true,
+     unique: true
+   },
+   password: {
+     type: String,
+     required: true
+   },
+   token: {
+     type: String
+   },
+   token_expires: {
+     type: Date
+   },
    created_at: Date,
    updated_at: Date
 })
@@ -24,7 +35,7 @@ UserSchema.pre( 'save', function( next ) {
       return next( err )
     }
 
-    bcrypt.hash( user.password, salt, null, ( err, hash ) => {
+  bcrypt.hash( user.password, salt, null, ( err, hash ) => {
       if( err ){
         return next( err )
       }
