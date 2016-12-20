@@ -1,6 +1,6 @@
 const { Widget } = require( '../../../../models/widgets' )
 
-const addWidget = widgetData => dashboard => {
+const addWidget = dashboard => {
   dashboard.widgets.push( new Widget( widgetData ))
   return dashboard.save()
 }

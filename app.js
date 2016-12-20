@@ -23,11 +23,12 @@ app.use( express.static( path.join( __dirname, '../front_end/public' )))
 
 app.use( express.static( path.join( __dirname, 'public' )))
 
+app.use ( cors )
+
 app.use( '/api/v1/dashboards', api.dashboards )
 app.use( '/api/v1/users', api.users )
 app.use( '/api/v1/widget_specifications', api.widget_specifications )
 
-app.use ( cors )
 
 // catch 404 and forward to error handler
 app.use( function( req, res, next ) {

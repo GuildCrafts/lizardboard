@@ -37,8 +37,9 @@ router.delete( '/:id',( request, response ) => {
 })
 
 router.post( '/:id/widgets', ( request, response ) => {
-  Dashboard.findById( request.params.id ).exec()
-    .then( addWidget( request.body ))
+  Dashboard.findByIdAndUpdate( request.params.id,
+    { $push: { widgets:request.body } } ).exec()
+    .then( result => result )
     .then( dashboard => response.status( 201 ).json( dashboard ))
     .catch( errorResponse( response ))
 })
