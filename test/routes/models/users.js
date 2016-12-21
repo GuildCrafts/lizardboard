@@ -20,7 +20,7 @@ const UserSchema = new Schema({
    },
    created_at: Date,
    updated_at: Date
-})
+}) 
 
 UserSchema.pre( 'save', function( next ) {
   const user = this
