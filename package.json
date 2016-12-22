@@ -7,7 +7,9 @@
     "node": "7.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:watch": "mocha -w --recursive",
+    "test": "mocha --recursive",
+    "test:coverage": "istanbul cover _mocha -- --recursive ./test",
     "seed": "node db/seed_collections.js",
     "start": "nf start",
     "start:dev": "nf start --procfile Procfile.dev"
@@ -26,7 +28,6 @@
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.15.1",
     "cookie-parser": "~1.4.3",
-    "crypto": "0.0.3",
     "debug": "~2.2.0",
     "ejs": "^2.5.2",
     "es6-promise": "^4.0.5",
@@ -49,8 +50,12 @@
     "babel-core": "^6.13.2",
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-react": "^6.11.1",
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
     "mocha": "^3.1.2",
     "nodemon": "^1.11.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "sinon": "^1.17.6",
+    "supertest": "^2.0.1"
   }
 }
