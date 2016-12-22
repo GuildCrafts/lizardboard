@@ -21,7 +21,6 @@ coverage
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 /build
-/build/*
 /seeds/*
 
 # Dependency directories
@@ -34,5 +33,4 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 tmp
-/.env
 .env
