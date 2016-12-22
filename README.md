@@ -42,6 +42,7 @@ $ use lizardboard
 ```
 MONGODB_URI=mongodb://localhost/lizardboard
 SECRET='Put Your Secret Here'
+FRONTEND_SERVER='http://localhost:3000'
 ```
 ###### Install all the things
 ```

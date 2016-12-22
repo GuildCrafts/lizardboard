@@ -10,7 +10,7 @@ const generateToken = user => {
 
 const userInfo = user => ({
   email: user.email,
-  _id: user._id
+  password: user.password
 })
 
 const tokenInfo = user => {

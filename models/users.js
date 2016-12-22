@@ -1,15 +1,20 @@
 const mongoose = require( 'mongoose' )
 const Schema = mongoose.Schema
 const bcrypt = require( 'bcrypt-nodejs' )
+const randtoken = require('rand-token')
 
 const UserSchema = new Schema({
-   email: { type: String, required: true, unique: true },
-   password: { type: String, required: true },
-   token: { type: String },
-   token_expires: { type: Date },
-   created_at: Date,
-   updated_at: Date
-})
+  name: { type: String, required: true},
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true },
+  phone_number: { type: String },
+  newsletter_subscribed: { type: Boolean, default: false },
+  API_key: { type: String, default: () => { return randtoken.generate(32) }},
+  company: { type: String },
+  dragonboard_bar: { type: Boolean, default: true },
+  active: { type: Boolean, default: true }
+},
+{ timestamps: true })
 
 UserSchema.pre( 'save', function( next ) {
   const user = this

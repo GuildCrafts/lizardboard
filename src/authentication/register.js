@@ -6,7 +6,9 @@ const { generateToken, userInfo, tokenInfo } = require( './authentication' )
 const ERROR_MESSAGE = 'Cannot authenticate request'
 
 exports.register = ( request, response, next ) => {
-  const { email, password } = request.body
+  const {
+    name, email, password, phone_number, newsletter_subscribed, company
+  } = request.body
 
   if( !email ) {
     return response.status( 422 ).send({ error: ERROR_MESSAGE })
@@ -21,14 +23,15 @@ exports.register = ( request, response, next ) => {
         return response.status( 422 ).send({ error: ERROR_MESSAGE })
       }
 
-      const user = new User({ email, password })
+      const user = new User({
+        name, email, password, phone_number, newsletter_subscribed, company
+      })
 
       user.save(( err, user ) => {
         if( err ) {
           return next( err )
         }
-
-        return response.status( 201 ).json( tokenInfo( user ))
+        response.redirect( process.env.FRONTEND_SERVER + '/dashboard' )
       })
   })
 }
